@@ -1,14 +1,25 @@
 class UNITO
 	COLORLIST = ['Green', 'Yellow', 'Red', 'Blue']
-	@card
+	#@cardlistj1 = {"CJ1_1"=>0,"CJ1_2"=>0, "CJ1_3"=>0,"CJ1_4"=>0, "CJ1_5"=>0,"CJ1_6"=>0,"CJ1_7"=>0 }
+	@card = []
 	@cardColor
-
+	GANA ="Gano"
+	PIERDE="Perdio"
 	@cardGame
 	@cardColorGame
 
+	def generarCartas 
+
+		@cardlistj1.each_with_index do |element,index|
+  			element.do_stuff(index)
+  		end
+
+
+	end
 	def cards jugador, carta = Random.new.rand(1..7), color = Random.new.rand(1..3)
 		@card = carta
-		@cardColor = color
+		@cardColor = color		
+		
         "#{@card}-#{COLORLIST[@cardColor]}"
 
 		#return @cardColor
@@ -21,10 +32,11 @@ class UNITO
 	end
 
 	def status
-		if "#{@cardGame}-#{@cardColorGame}" == "#{@card}-#{@cardColor}"
-			"Gano"
+		if "#{@cardGame}" == "#{@card}" or "#{@cardColorGame}" == "#{@cardColor}"
+			GANA
 		else
-			"Perdio"
+			PIERDE
 		end
 	end
+
 end
