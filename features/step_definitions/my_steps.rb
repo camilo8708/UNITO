@@ -37,4 +37,8 @@ Given(/^la carta en juego es "([^"]*)" de color "([^"]*)"$/) do |numero, color|
   visit "/backdoor/cartaJuego/#{numero}/#{color}"
 end
 
+When(/^el jugador "([^"]*)" juegue carta$/) do |jugador|
+	boton = "JUGAR CARTA "+jugador
+   click_button "#{boton}"
+end
 

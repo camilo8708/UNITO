@@ -1,12 +1,17 @@
 class UNITO
 	COLORLIST = ['Green', 'Yellow', 'Red', 'Blue']
 	#@cardlistj1 = {"CJ1_1"=>0,"CJ1_2"=>0, "CJ1_3"=>0,"CJ1_4"=>0, "CJ1_5"=>0,"CJ1_6"=>0,"CJ1_7"=>0 }
-	@card = []
+	@card 
 	@cardColor
 	GANA ="Gano"
 	PIERDE="Perdio"
 	@cardGame
 	@cardColorGame
+
+	def initialize
+		@card = Array.new
+		@cardColor = Array.new
+	end
 
 	def generarCartas 
 
@@ -17,12 +22,16 @@ class UNITO
 
 	end
 	def cards jugador, carta = Random.new.rand(1..7), color = Random.new.rand(1..3)
-		@card = carta
-		@cardColor = color		
+		if jugador == 1
+			@card.unshift(carta)
+			@cardColor.unshift(color)	
+		else
+			@card.push(carta)
+			@cardColor.push(color)
+		end	
 		
-        "#{@card}-#{COLORLIST[@cardColor]}"
+        "#{@card[jugador -1]}-#{COLORLIST[@cardColor[jugador -1]]}"
 
-		#return @cardColor
 	end
 
 	def cardGame carta = Random.new.rand(1..7), color = Random.new.rand(0..3)
@@ -31,8 +40,8 @@ class UNITO
 		"#{@cardGame}-#{COLORLIST[@cardColorGame]}"
 	end
 
-	def status
-		if "#{@cardGame}" == "#{@card}" or "#{@cardColorGame}" == "#{@cardColor}"
+	def status jugador
+		if "#{@cardGame}" == "#{@card[jugador -1]}" or "#{@cardColorGame}" == "#{@cardColor[jugador -1]}"
 			GANA
 		else
 			PIERDE

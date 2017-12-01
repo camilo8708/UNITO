@@ -6,12 +6,18 @@ get '/' do
     session['juego'] = UNITO.new
     session['cartaPrincipal']= session['juego'].cardGame
     session['cartaJ1']= session['juego'].cards 1
+    session['cartaJ2']= session['juego'].cards 2
 	erb :index
 end
 
-post '/jugar' do
+post '/jugar/:jugador' do
 	session['estado'] = ""
-	if session['juego'].status == "Gano"
+	if session['juego'].status jugador == "Gano"
+		if jugador == "J1"
+			session['ganador'] = "GANADOR JUGADOR 1"
+		else
+			session['ganador'] = "GANADOR JUGADOR 2"
+		end
 		erb :ganador
 	else
 		session['estado'] = "Carta invalida"

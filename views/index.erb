@@ -27,9 +27,9 @@ th, td {
 <h1 align="center"><%=session['estado']  %></h1>
 
 <h1 align="center"><%=session['cartaPrincipal'] %></h1>
-	<form method="post" action="/jugar">
-		<input type="submit" value="JUGAR CARTA" align="center">
-	</form>
+
+<h1 align="center"><%=session['ganador'] %></h1>
+
 <table style="width:100%" aling align="center">
   <tr>
     <th>CARTAS JUGADOR 1</th>
@@ -38,6 +38,25 @@ th, td {
   <tr>
     <td><%=session['cartaJ1'] %></td>
     <td>4-Blue</td>   
+  </tr>
+
+
+
+    <tr>
+    <td>  
+
+    <form method="post" action="/jugar/1">
+    <input type="submit" value="JUGAR CARTA J1" align="center">
+  </form>
+
+  </td>
+    <td>  
+
+    <form method="post" action="/jugar/2">
+    <input type="submit" value="JUGAR CARTA J2" align="center">
+  </form>
+
+  </td>   
   </tr>
 
  </table> 
