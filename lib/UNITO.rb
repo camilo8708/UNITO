@@ -1,19 +1,28 @@
 class UNITO
-	color = ['GREEN', 'YELLOW', 'RED', 'BLUE']
-	numeros = [1,2,3,4,5,6,7]
-	@cards
-	@cardGame
+	COLORLIST = ['GREEN', 'YELLOW', 'RED', 'BLUE']
 
-	def cards jugador, carta = Random.new.rand(1..7)
-		return @cards = carta
+	@card
+	@cardColor
+
+	@cardGame
+	@cardColorGame
+
+	def cards jugador, carta = Random.new.rand(1..7), color = Random.new.rand(1..3)
+		@card = carta
+		@cardColor = color
+        "#{@card}-#{COLORLIST[@cardColor]}"
+
+		#return @cardColor
 	end
 
-	def cardGame carta = Random.new.rand(1..7)
+	def cardGame carta = Random.new.rand(1..7), color = Random.new.rand(0..3)
 		@cardGame = carta
+		@cardColorGame = color
+		"#{@cardGame}-#{COLORLIST[@cardColorGame]}"
 	end
 
 	def status
-		if @cardGame == @cards
+		if "#{@cardGame}-#{@cardColorGame}" == "#{@card}-#{@cardColor}"
 			"Gano"
 		else
 			"Perdio"
