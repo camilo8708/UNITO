@@ -10,7 +10,13 @@ get '/' do
 end
 
 post '/jugar' do
-	erb :ganador
+	session['estado'] = ""
+	if session['juego'].status == "Gano"
+		erb :ganador
+	else
+		session['estado'] = "Carta invalida"
+		erb :index
+	end
 end
 
 get '/backdoor/carta/:numero/:color' do |numero,color|
