@@ -7,22 +7,26 @@ get '/' do
     session['cartaPrincipal']= session['juego'].cardGame
     session['cartaJ1']= session['juego'].cards 1
     session['cartaJ2']= session['juego'].cards 2
+    session['estado'] = ""
+    session['ganador'] = ""
 	erb :index
 end
 
-post '/jugar/:jugador' do
+post '/jugar/:jugador' do |jugador|
 	session['estado'] = ""
-	if session['juego'].status jugador == "Gano"
-		if jugador == "J1"
+	session['ganador'] = ""
+	estado = session['juego'].status jugador.to_i
+	if estado == "Gano"
+		if jugador == "1"
 			session['ganador'] = "GANADOR JUGADOR 1"
 		else
 			session['ganador'] = "GANADOR JUGADOR 2"
 		end
-		erb :ganador
+
 	else
 		session['estado'] = "Carta invalida"
-		erb :index
 	end
+	erb :index
 end
 
 get '/backdoor/carta/:numero/:color' do |numero,color|

@@ -20,10 +20,7 @@ Scenario: Gana Jugador 1
 	When el jugador "J1" juegue carta
 	Then debo ver titulo "GANADOR JUGADOR 1"
 
-Scenario: Gana Jugador 2
-	Given que inicie la aplicacion
-	And las cartas  entregar son "2" de color "Red"
-	And la carta en juego es "2" de color "Red"
-	When el jugador "J2" juegue carta
-	Then debo ver titulo "GANADOR JUGADOR 2"
+
+
+
 
