@@ -19,3 +19,11 @@ Scenario: Gana Jugador 1
 	And la carta en juego es "2" de color "Red"
 	When juegue carta
 	Then debo ver titulo "GANADOR JUGADOR 1"
+
+
+Scenario: Carta invalida
+	Given que inicie la aplicacion
+	And las cartas  entregar son "3" de color "Blue"
+	And la carta en juego es "2" de color "Red"
+	When juegue carta
+	Then debo ver titulo "Carta invalida"
