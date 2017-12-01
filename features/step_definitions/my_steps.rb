@@ -33,3 +33,8 @@ Given(/^las cartas  entregar son "([^"]*)" de color "([^"]*)"$/) do |numero, col
   visit "/backdoor/carta/#{numero}/#{color}"
 end
 
+Given(/^la carta en juego es "([^"]*)" de color "([^"]*)"$/) do |numero, color|
+  visit "/backdoor/cartaJuego/#{numero}/#{color}"
+end
+
+

@@ -15,5 +15,7 @@ Scenario: iniciar aplicacion
 
 Scenario: Gana Jugador 1
 	Given que inicie la aplicacion
+	And las cartas  entregar son "2" de color "Red"
+	And la carta en juego es "2" de color "Red"
 	When juegue carta
 	Then debo ver titulo "GANADOR JUGADOR 1"
