@@ -19,6 +19,7 @@ Then(/^debo ver turno "([^"]*)"$/) do |turno|
   expect(page.body).to match /#{turno}/m
 end
 
-Then(/^debo ver "([^"]*)" carta para jugador "([^"]*)"$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^debo ver "([^"]*)" carta para jugador "([^"]*)"$/) do |carta1, jugador|
+  expect(page.body).to match /#{carta1}/m
+  expect(page.body).to match /#{jugador}/m
 end
