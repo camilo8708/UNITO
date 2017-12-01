@@ -11,3 +11,8 @@ Scenario: iniciar aplicacion
 	And  debo ver turno "TURNO JUGADOR 1"
 	And  debo ver "1-Yellow" carta para jugador "CARTAS JUGADOR 1"
 #	And debo ver "7" cartas para jugador "j2" 
+
+Scenario: Gana Jugador 1
+	Given que inicie la aplicacion
+	When juegue carta
+	Then debo ver titulo "GANADOR JUGADOR 1"

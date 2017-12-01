@@ -23,3 +23,8 @@ Then(/^debo ver "([^"]*)" carta para jugador "([^"]*)"$/) do |carta1, jugador|
   expect(page.body).to match /#{carta1}/m
   expect(page.body).to match /#{jugador}/m
 end
+
+When(/^juegue carta$/) do
+  click_button("JUGAR CARTA")
+end
+
