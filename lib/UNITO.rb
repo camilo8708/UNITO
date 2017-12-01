@@ -1,6 +1,5 @@
 class UNITO
-	COLORLIST = ['GREEN', 'YELLOW', 'RED', 'BLUE']
-
+	COLORLIST = ['Green', 'Yellow', 'Red', 'Blue']
 	@card
 	@cardColor
 
