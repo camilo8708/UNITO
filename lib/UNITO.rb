@@ -4,11 +4,19 @@ class UNITO
 	@cards
 	@cardGame
 
-	def cards jugador
-		@cards = 1
+	def cards jugador, carta = Random.new.rand(1..7)
+		return @cards = carta
 	end
 
-	def cardGame
-		@cardGame = 1
+	def cardGame carta = Random.new.rand(1..7)
+		@cardGame = carta
+	end
+
+	def status
+		if @cardGame == @cards
+			"Gano"
+		else
+			"Perdio"
+		end
 	end
 end
