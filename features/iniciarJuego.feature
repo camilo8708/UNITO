@@ -5,6 +5,7 @@ Feature:
 
 Scenario: iniciar aplicacion
 	Given que inicie la aplicacion
+	And las cartas  entregar son "1" de color "Yellow"
 	Then debo ver titulo "JUGADOR 1"
 	And  debo ver titulo "JUGADOR 2"
 	And  debo ver una carta principal "1" color "Yellow"

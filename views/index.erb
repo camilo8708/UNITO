@@ -14,7 +14,7 @@
 
 <h1 align="center">TURNO JUGADOR 1</h1>
 
-<h1 align="center">1-Yellow</h1>
+<h1 align="center"><%=session['cartaPrincipal'] %></h1>
 	<form method="post" action="/jugar">
 		<input type="submit" value="JUGAR CARTA" align="center">
 	</form>
@@ -24,7 +24,7 @@
     <th>CARTAS JUGADOR 2</th> 
   </tr>
   <tr>
-    <td>1-Yellow</td>
+    <td><%=session['cartaJ1'] %></td>
     <td>4-Blue</td>   
   </tr>
 

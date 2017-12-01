@@ -28,3 +28,8 @@ When(/^juegue carta$/) do
   click_button("JUGAR CARTA")
 end
 
+
+Given(/^las cartas  entregar son "([^"]*)" de color "([^"]*)"$/) do |numero, color|
+  visit "/backdoor/carta/#{numero}/#{color}"
+end
+
